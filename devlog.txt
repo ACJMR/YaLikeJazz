@@ -72,4 +72,5 @@ LESSONS LEARNED
 2017-01-04
 --------------------------------------------------------------
 Colin :: Helped draw up UML diagram and finalize proposal.
+George :: Helped edit the proposal in terms describing user experience. 
 ==============================================================
