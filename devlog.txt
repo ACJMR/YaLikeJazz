@@ -1,11 +1,10 @@
-<Team Name (without word "team")>
-<Member Bubbles>
-<Member Buttercup>
-<Member Blossom>
-pd <pd#>
+YaLikeJazz
+George Liang
+Colin Hosking
+Xinyi Huang
+pd 08
 ---------------------
-<Project>
-
+JUNO
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
