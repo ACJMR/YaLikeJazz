@@ -78,7 +78,7 @@ Xinyi :: Helped edit the UML diagram.
 
 2018-01-08
 --------------------------------------------------------------
-Colin :: 
+Colin :: Helped write README file and detailed the game rules/user instructions to begin a game.
 George :: Helped edit the README and created the Woo.java file. 
 Xinyi :: 
 ==============================================================
