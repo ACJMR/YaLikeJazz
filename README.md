@@ -1,7 +1,7 @@
 # YaLikeJazz
-Colin Hosking
-George Liang
-Xinyi Huang 
+## Colin Hosking
+## George Liang
+## Xinyi Huang 
 
 # Project Vision 
 Juno is a recreation of the famous card game UNO. The user will be able to play against other human players by selecting the number of players, 
