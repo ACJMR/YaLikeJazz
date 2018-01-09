@@ -75,3 +75,10 @@ Colin :: Helped draw up UML diagram and finalize proposal.
 George :: Helped edit the proposal in terms of describing user experience. 
 Xinyi :: Helped edit the UML diagram.
 ==============================================================
+
+2017-01-08
+--------------------------------------------------------------
+Colin :: 
+George :: Helped edit the README and created the Woo.java file. 
+Xinyi :: 
+==============================================================
