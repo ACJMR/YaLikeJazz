@@ -12,7 +12,6 @@ then taking turns when it is the right turn for each user. The objective is to c
 # Lauch Instructions
 To begin a new game, <br>
 1. compile Woo.java in the terminal.
-<br>
 $ javac Woo.java
 <br>
 2. run Woo.java.
