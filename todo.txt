@@ -1,3 +1,7 @@
+YaLikeJazz                                             	                      	      	      	           APCS1 pd 08
+Colin Hosking, George Liang, Xinyi Huang 				                                                   2018-01-05
+
+
 Current things to do: 
 
 1. Create all the necessary classes as stated in the UML diagram

@@ -85,7 +85,7 @@ Xinyi :: Helped edit the README file.
 
 2018-01-09
 --------------------------------------------------------------
-Colin :: Helped edit the UML diagram and drafted up a Flow Chart.
+Colin :: Helped edit the UML diagram, todo list, and drafted up a Flow Chart
 George :: Helped edit the UML diagram and write up the todo list. 
 Xinyi :: 
 ==============================================================
