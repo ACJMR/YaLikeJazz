@@ -17,10 +17,12 @@ To begin a new game, <br>
 $ javac Woo.java
 <br>
 <br>
+<br>
 2. run Woo.java.
 <br>
 <br>
 $ java Woo.java
+<br>
 <br>
 <br>
 3. select how many players you desire.
