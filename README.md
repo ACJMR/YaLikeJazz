@@ -6,8 +6,7 @@ George Liang
 Xinyi Huang 
 
 # Project Vision 
-Juno is a recreation of the famous card game UNO. The user will be able to play against other human players by selecting the number of players, 
-then taking turns when it is the right turn for each user. The objective is to come out number one against other players by playing all the cards in your hand. 
+Juno is a recreation of the famous card game UNO. The user will be able to play against other human players in the terminal. The users will select the number of players, then take turns when it is the right turn for each user. To win, the user needs to play all the cards in your hand. 
 
 # Lauch Instructions
 To begin a new game: <br>
@@ -20,6 +19,7 @@ To begin a new game: <br>
 	$ java Woo.java
 
 3) select how many players you desire. <br>
+<br>
 The game will begin, please pass the device between players for their respective turns.
 
 # Rules of Juno
