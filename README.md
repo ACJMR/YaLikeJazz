@@ -13,17 +13,11 @@ then taking turns when it is the right turn for each user. The objective is to c
 To begin a new game, <br>
 1. compile Woo.java in the terminal.
 <br>
-<br>
 $ javac Woo.java
-<br>
-<br>
 <br>
 2. run Woo.java.
 <br>
-<br>
 $ java Woo.java
-<br>
-<br>
 <br>
 3. select how many players you desire.
 The game will begin, please pass the device between players for their respective turns.
