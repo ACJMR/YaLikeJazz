@@ -15,10 +15,12 @@ To begin a new game: <br>
 <br>
 $ javac Woo.java
 <br>
+
 2) run Woo.java.
 <br>
 $ java Woo.java
 <br>
+
 3) select how many players you desire.
 The game will begin, please pass the device between players for their respective turns.
 
