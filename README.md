@@ -12,14 +12,14 @@ then taking turns when it is the right turn for each user. The objective is to c
 # Lauch Instructions
 To begin a new game: <br>
 1) compile Woo.java in the terminal.
-<br>
-$ javac Woo.java
+
+	$ javac Woo.java
 
 2) run Woo.java.
 
-$ java Woo.java
+	$ java Woo.java
 
-3) select how many players you desire.
+3) select how many players you desire. <br>
 The game will begin, please pass the device between players for their respective turns.
 
 # Rules of Juno
