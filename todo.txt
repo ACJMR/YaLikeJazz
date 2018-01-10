@@ -1,0 +1,10 @@
+Current things to do: 
+
+1. Create all the necessary classes as stated in the UML diagram
+2. Create all the necessary variables and methods as noted in UML.pdf
+3. Combine the functionality of all classes as shown by flowchart. 
+4. Test Juno for one to two players. 
+5. Test Juno for greater than 2 players. 
+6. Check to make sure we have included everything necessary in project such as
+   updated logs
+7. Submit project 
