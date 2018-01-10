@@ -1,2 +1,2 @@
-public class Zero{
+public class Zero extends Card{
 }
