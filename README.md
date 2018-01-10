@@ -7,8 +7,15 @@ Xinyi Huang
 Juno is a recreation of the famous card game UNO. The user will be able to play against other human players by selecting the number of players, 
 then taking turns when it is the right turn for each user. The objective is to come out number one against other players by playing all the cards in your hand. 
 
-# How to run the program
-To begin a new game, run Woo.java and select how many players you desire.
+# Lauch Instructions
+To begin a new game, first compile Woo.java in the terminal.
+<br>
+$ javac Woo.java
+<br>
+Then run Woo.java.
+$ java Woo.java
+
+and select how many players you desire.
 The game will begin, please pass the device between players for their respective turns.
 
 # Rules of Juno
