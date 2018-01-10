@@ -1,6 +1,8 @@
 # YaLikeJazz
-Colin Hosking, 
-George Liang, 
+Colin Hosking
+<br>
+George Liang
+<br>
 Xinyi Huang 
 
 # Project Vision 
