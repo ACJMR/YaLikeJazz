@@ -82,3 +82,10 @@ Colin :: Helped write README file and detailed the game rules/user instructions 
 George :: Helped edit the README and created the Woo.java file. 
 Xinyi :: Helped edit the README file.
 ==============================================================
+
+2018-01-09
+--------------------------------------------------------------
+Colin :: 
+George :: Helped edit the UML diagram and write up the todo list. 
+Xinyi :: 
+==============================================================
