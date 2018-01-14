@@ -1,14 +1,15 @@
-public class Card{
+public abstract class Card{
     private int _type; 
     private int _suite;
     
-    public static int getType(){
+    public int getType(){
+	return _type;
     }
 
-    public static int getSuite(){
+    public int getSuite(){
+	return _suite;
     }
 
-    public static boolean isPlayable(){
-    }
+    
     
 }
