@@ -25,7 +25,7 @@ The game will begin, please pass the device between players for their respective
 # Rules of Juno
 1. Card Types
 	* Each card is one of four suites (Red, Green, Yellow, Blue) 
-	* 0 - 9 Numbered Cards 
+	* Zero - Nine Numbered Cards 
 	* Skip Turn --skips the next player’s turn
 	* Reverse -- reverses the turn sequence 
 	* Draw Two -- the following player draws two cards

@@ -90,23 +90,38 @@ George :: Helped edit the UML diagram and write up the todo list.
 Xinyi :: 
 ==============================================================
 
+2018-01-10
+--------------------------------------------------------------
+Colin :: 
+George :: Added instance variables and methods to Card. Created classes for cards. 
+Xinyi :: 
+==============================================================
+
+2018-01-11
+--------------------------------------------------------------
+Colin :: Created flowchart. 
+George :: Uploaded flow chart and methods to Woo.
+Xinyi :: 
+==============================================================
+
+
 2018-01-12
 --------------------------------------------------------------
 Colin :: Further revised flowchart and UML
-George :: 
+George ::  
 Xinyi :: 
 ==============================================================
 
 2018-01-14
 --------------------------------------------------------------
 Colin :: Created classes and wrote basic accessor methods, making sure code was compilable.
-George :: 
+George :: Edited accessor methods.  
 Xinyi :: 
 ==============================================================
 
 2018-01-15
 -------------------------------------------------------------
 Colin :: Worked on coding out JUNO, revised flow charts.
-George :: 
+George :: Worked on coding out JUNO through screenshare, revised README and revised UML.
 Xinyi :: 
 ==============================================================
