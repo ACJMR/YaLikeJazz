@@ -277,11 +277,16 @@ public class Woo{
 	_turnOrder.add(p3);
 	}
 
-	
     }
 
     public void playerDraw(Player p){
-	p._hand.add(_deck.remove(0));
+	 if (_deck.size()==0){
+	     for (Card c: _discardPile){
+		 _deck.add(c);
+	     }
+	     shuffle();
+	 }
+	 p._hand.add(_deck.remove(0));
     }
     
     public boolean anyWinner(){ //checks if each player is a winner, if no player is a winner, return false
@@ -306,9 +311,9 @@ public class Woo{
 	for (int i =0; i < _turnOrder.size(); i++){
 	    Player focusPlayer = _turnOrder.get(i);
 	    while(!focusPlayer.handFull()){
-	        playerDraw(focusPlayer);
-		//focusPlayer.sortHand();	
+	        playerDraw(focusPlayer);	
 	    }
+	    focusPlayer.sortHand();
 	}	
     }
     
@@ -384,9 +389,9 @@ public class Woo{
 	}
 	
 	int turnCounter = 0;
-
+ 
 	while (!game.anyWinner()){
-	    //deck is empty mechanics
+	
 	    
 	    if (turnCounter != 0 && game._topCard.get(0).getType() == 13){ //Skip
 		turnCounter += 1;
@@ -394,7 +399,15 @@ public class Woo{
 	    }
 
 	    if (turnCounter != 0 && game._topCard.get(0).getType() == 14){ //Reverse
-		
+		Player playerBefore = game._turnOrder.get(((turnCounter%game._turnOrder.size()) + game._turnOrder.size() - 1)%game._turnOrder.size());
+		for(int i = 0; i < game._turnOrder.size() / 2; i++){
+		    game._turnOrder.set(i,game._turnOrder.set(game._turnOrder.size()-1-i,game._turnOrder.get(i)));	
+		}
+	        for (int i = 0; i < game._turnOrder.size(); i++){
+		    if (game._turnOrder.get(i) == playerBefore){
+			turnCounter = i+1;
+		    }
+		}
 	    }
 	    
 	    
