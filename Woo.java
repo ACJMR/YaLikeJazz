@@ -330,6 +330,7 @@ public class Woo{
 	    
 	    System.out.println("Please pass the device to " + game._currentPlayer.getName() + ", it is their turn.");
 	    System.out.println("Press any key to continue");
+	    Keyboard.readString();
 	
 	    game.printUserDisplay(game._currentPlayer);
 
