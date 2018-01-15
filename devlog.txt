@@ -89,3 +89,24 @@ Colin :: Helped edit the UML diagram, todo list, and drafted up a Flow Chart
 George :: Helped edit the UML diagram and write up the todo list. 
 Xinyi :: 
 ==============================================================
+
+2018-01-12
+--------------------------------------------------------------
+Colin :: Further revised flowchart and UML
+George :: 
+Xinyi :: 
+==============================================================
+
+2018-01-14
+--------------------------------------------------------------
+Colin :: Created classes and wrote basic accessor methods, making sure code was compilable.
+George :: 
+Xinyi :: 
+==============================================================
+
+2018-01-15
+-------------------------------------------------------------
+Colin :: Worked on coding out JUNO, revised flow charts.
+George :: 
+Xinyi :: 
+==============================================================
