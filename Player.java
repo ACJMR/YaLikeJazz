@@ -8,6 +8,7 @@ public class Player{
     public Player(String name, int num){
         _name = name;
         _number = num;
+        _hand = new ArrayList<Card>();
     }
     
     public ArrayList<Card> getHand(){
@@ -49,8 +50,9 @@ public class Player{
     
     public String toString(){
         String s = "Your Hand: ";
-        for (Card c: _hand){
-            s += c.toString();
+        for (int i = 0; i < _hand.size(); i++){
+            Card c = _hand.get(i);
+            s += "(" + (i+1) + ")" + c.toString();
         }
         return s;
     }

@@ -1,6 +1,6 @@
 public class WildDrawFour extends Card{
      public WildDrawFour(){
-        _suite = 5;
+        _suite = 4;
         _type = 11;
     }
 

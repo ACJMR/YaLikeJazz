@@ -225,8 +225,6 @@ public class Woo{
 	}
 
 	
-
-	
     }
 
     public void playerDraw(Player p){
@@ -320,15 +318,19 @@ public class Woo{
     public static void main(String[]args){
 	Woo game = new Woo();
 	game.setup();
-
+	game.distribute();
 	game._topCard.add(game._deck.remove(0));
 
 	int turnCounter = 0;
 
 	while (!game.anyWinner()){
 	    //deck is empty mechanics
+	    
 	    game._currentPlayer = game._turnOrder.get(turnCounter%game._turnOrder.size());
 	    
+	    System.out.println("Please pass the device to " + game._currentPlayer.getName() + ", it is their turn.");
+	    System.out.println("Press any key to continue");
+	
 	    game.printUserDisplay(game._currentPlayer);
 
 	    while(!game.anyPlayable(game._currentPlayer)){
@@ -342,7 +344,7 @@ public class Woo{
 	    //user selects card to play
 
 	    System.out.println("Please select a card to play by it's position in your hand.");
-	    System.out.println("To play your leftmost card, type 1, to play the second-leftmost card, type 2...etc");
+	    System.out.println("Card position in your hand is indicated by a number in parenthesis.");
 	    int cardtoPlay = Keyboard.readInt()-1;
 
 	    while(!game.isPlayable(game._currentPlayer._hand.get(cardtoPlay))){
@@ -355,6 +357,8 @@ public class Woo{
 	    
 	    turnCounter += 1;
 	}
+
+	System.out.println(game._currentPlayer.getName() + "is the WINNER!!!!!!");
     }
 	    
 }

@@ -62,7 +62,7 @@ public abstract class Card{
         else{
             type = _type + "";
         }
-        return s + " [" + type + "] " + ANSI_RESET;
+        return s + "[" + type + "] " + ANSI_RESET;
     }
     
 }
