@@ -19,6 +19,9 @@ public abstract class Card{
 	   return _suite;
     }
 
+    public void setSuite(int i){
+	   this._suite = i;
+    }
     
     public abstract void action();
     
@@ -42,13 +45,19 @@ public abstract class Card{
         
         String type;
         
-        if (_type == 10){
+        if (_type == 10 && _suite == 4){
             type = "Wild";
             return "[" + type + "]"; //prints out in default terminal text 
         }
-        else if (_type == 11){
+        else if (_type == 11 && _suite == 4){
             type = "WildDraw4";
             return "[" + type + "]"; //prints out in default terminal text
+        }
+        else if(_type == 11){
+            type = "WildDraw4";
+        }
+        else if(_type == 10){
+            type = "Wild";
         }
         else if (_type == 12){
             type = "Draw2";

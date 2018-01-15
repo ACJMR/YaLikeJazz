@@ -33,7 +33,6 @@ public class Woo{
 	_deck.add(One2A);
 	Card One3A = new One(3);
 	_deck.add(One3A);
-	
 	Card One0B = new One(0);
 	_deck.add(One0B);
 	Card One1B = new One(1);
@@ -42,6 +41,7 @@ public class Woo{
 	_deck.add(One2B);
 	Card One3B = new One(3);
 	_deck.add(One3B);
+	
 	Card Two0A = new Two(0);
 	_deck.add(Two0A);
 	Card Two1A = new Two(1);
@@ -49,8 +49,7 @@ public class Woo{
 	Card Two2A = new Two(2);
 	_deck.add(Two2A);
 	Card Two3A = new Two(3);
-	_deck.add(Two3A);
-	
+	_deck.add(Two3A);	
 	Card Two0B = new Two(0);
 	_deck.add(Two0B);
 	Card Two1B = new Two(1);
@@ -59,6 +58,7 @@ public class Woo{
 	_deck.add(Two2B);
 	Card Two3B = new Two(3);
 	_deck.add(Two3B);
+	
 	Card Three0A = new Three(0);
 	_deck.add(Three0A);
 	Card Three1A = new Three(1);
@@ -66,8 +66,7 @@ public class Woo{
 	Card Three2A = new Three(2);
 	_deck.add(Three2A);
 	Card Three3A = new Three(3);
-	_deck.add(Three3A);
-	
+	_deck.add(Three3A);	
 	Card Three0B = new Three(0);
 	_deck.add(Three0B);
 	Card Three1B = new Three(1);
@@ -76,6 +75,7 @@ public class Woo{
 	_deck.add(Three2B);
 	Card Three3B = new Three(3);
 	_deck.add(Three3B);
+	
 	Card Four0A = new Four(0);
 	_deck.add(Four0A);
 	Card Four1A = new Four(1);
@@ -83,8 +83,7 @@ public class Woo{
 	Card Four2A = new Four(2);
 	_deck.add(Four2A);
 	Card Four3A = new Four(3);
-	_deck.add(Four3A);
-	
+	_deck.add(Four3A);	
 	Card Four0B = new Four(0);
 	_deck.add(Four0B);
 	Card Four1B = new Four(1);
@@ -93,6 +92,7 @@ public class Woo{
 	_deck.add(Four2B);
 	Card Four3B = new Four(3);
 	_deck.add(Four3B);
+	
 	Card Five0A = new Five(0);
 	_deck.add(Five0A);
 	Card Five1A = new Five(1);
@@ -100,8 +100,7 @@ public class Woo{
 	Card Five2A = new Five(2);
 	_deck.add(Five2A);
 	Card Five3A = new Five(3);
-	_deck.add(Five3A);
-	
+	_deck.add(Five3A);	
 	Card Five0B = new Five(0);
 	_deck.add(Five0B);
 	Card Five1B = new Five(1);
@@ -110,6 +109,7 @@ public class Woo{
 	_deck.add(Five2B);
 	Card Five3B = new Five(3);
 	_deck.add(Five3B);
+	
 	Card Six0A = new Six(0);
 	_deck.add(Six0A);
 	Card Six1A = new Six(1);
@@ -117,8 +117,7 @@ public class Woo{
 	Card Six2A = new Six(2);
 	_deck.add(Six2A);
 	Card Six3A = new Six(3);
-	_deck.add(Six3A);
-	
+	_deck.add(Six3A);	
 	Card Six0B = new Six(0);
 	_deck.add(Six0B);
 	Card Six1B = new Six(1);
@@ -127,6 +126,7 @@ public class Woo{
 	_deck.add(Six2B);
 	Card Six3B = new Six(3);
 	_deck.add(Six3B);
+	
 	Card Seven0A = new Seven(0);
 	_deck.add(Seven0A);
 	Card Seven1A = new Seven(1);
@@ -134,8 +134,7 @@ public class Woo{
 	Card Seven2A = new Seven(2);
 	_deck.add(Seven2A);
 	Card Seven3A = new Seven(3);
-	_deck.add(Seven3A);
-	
+	_deck.add(Seven3A);	
 	Card Seven0B = new Seven(0);
 	_deck.add(Seven0B);
 	Card Seven1B = new Seven(1);
@@ -144,6 +143,7 @@ public class Woo{
 	_deck.add(Seven2B);
 	Card Seven3B = new Seven(3);
 	_deck.add(Seven3B);
+	
 	Card Eight0A = new Eight(0);
 	_deck.add(Eight0A);
 	Card Eight1A = new Eight(1);
@@ -151,8 +151,7 @@ public class Woo{
 	Card Eight2A = new Eight(2);
 	_deck.add(Eight2A);
 	Card Eight3A = new Eight(3);
-	_deck.add(Eight3A);
-	
+	_deck.add(Eight3A);	
 	Card Eight0B = new Eight(0);
 	_deck.add(Eight0B);
 	Card Eight1B = new Eight(1);
@@ -161,6 +160,7 @@ public class Woo{
 	_deck.add(Eight2B);
 	Card Eight3B = new Eight(3);
 	_deck.add(Eight3B);
+	
 	Card Nine0A = new Nine(0);
 	_deck.add(Nine0A);
 	Card Nine1A = new Nine(1);
@@ -168,8 +168,7 @@ public class Woo{
 	Card Nine2A = new Nine(2);
 	_deck.add(Nine2A);
 	Card Nine3A = new Nine(3);
-	_deck.add(Nine3A);
-	
+	_deck.add(Nine3A);	
 	Card Nine0B = new Nine(0);
 	_deck.add(Nine0B);
 	Card Nine1B = new Nine(1);
@@ -178,6 +177,7 @@ public class Woo{
 	_deck.add(Nine2B);
 	Card Nine3B = new Nine(3);
 	_deck.add(Nine3B);
+	
 	Card WildA = new Wild();
 	_deck.add(WildA);
 	Card WildB = new Wild();
@@ -186,6 +186,7 @@ public class Woo{
 	_deck.add(WildC);
 	Card WildD = new Wild();
 	_deck.add(WildD);
+	
 	Card WildDrawFourA = new WildDrawFour();
 	_deck.add(WildDrawFourA);
 	Card WildDrawFourB = new WildDrawFour();
@@ -194,6 +195,58 @@ public class Woo{
 	_deck.add(WildDrawFourC);
 	Card WildDrawFourD = new WildDrawFour();
 	_deck.add(WildDrawFourD);
+
+	Card DrawTwo0A = new DrawTwo(0);
+	_deck.add(DrawTwo0A);
+	Card DrawTwo1A = new DrawTwo(1);
+	_deck.add(DrawTwo1A);
+	Card DrawTwo2A = new DrawTwo(2);
+	_deck.add(DrawTwo2A);
+	Card DrawTwo3A = new DrawTwo(3);
+	_deck.add(DrawTwo3A);
+	Card DrawTwo0B = new DrawTwo(0);
+	_deck.add(DrawTwo0B);
+	Card DrawTwo1B = new DrawTwo(1);
+	_deck.add(DrawTwo1B);
+	Card DrawTwo2B = new DrawTwo(2);
+	_deck.add(DrawTwo2B);
+	Card DrawTwo3B = new DrawTwo(3);
+	_deck.add(DrawTwo3B);
+
+	Card Reverse0A = new Reverse(0);
+	_deck.add(Reverse0A);
+	Card Reverse1A = new Reverse(1);
+	_deck.add(Reverse1A);
+	Card Reverse2A = new Reverse(2);
+	_deck.add(Reverse2A);
+	Card Reverse3A = new Reverse(3);
+	_deck.add(Reverse3A);
+	Card Reverse0B = new Reverse(0);
+	_deck.add(Reverse0B);
+	Card Reverse1B = new Reverse(1);
+	_deck.add(Reverse1B);
+	Card Reverse2B = new Reverse(2);
+	_deck.add(Reverse2B);
+	Card Reverse3B = new Reverse(3);
+	_deck.add(Reverse3B);
+
+	Card Skip0A = new Skip(0);
+	_deck.add(Skip0A);
+	Card Skip1A = new Skip(1);
+	_deck.add(Skip1A);
+	Card Skip2A = new Skip(2);
+	_deck.add(Skip2A);
+	Card Skip3A = new Skip(3);
+	_deck.add(Skip3A);
+	Card Skip0B = new Skip(0);
+	_deck.add(Skip0B);
+	Card Skip1B = new Skip(1);
+	_deck.add(Skip1B);
+	Card Skip2B = new Skip(2);
+	_deck.add(Skip2B);
+	Card Skip3B = new Skip(3);
+	_deck.add(Skip3B);
+	
 
 	shuffle();
 
@@ -306,11 +359,11 @@ public class Woo{
       	System.out.println();
 	System.out.println();
 	System.out.println();
+      	System.out.println(p.getName() + "'s turn:");
 	System.out.println();
 	System.out.println();
 	System.out.println("TopCard: " + _topCard.get(0) + "  --playable cards must match this card's suite (color) or type");
 	System.out.println();
-	System.out.println(p.getName() + "'s turn:");
        	System.out.println();
         System.out.println(p);
     }
@@ -318,20 +371,52 @@ public class Woo{
     public static void main(String[]args){
 	Woo game = new Woo();
 	game.setup();
+
+	/**for (Card c: game._deck){
+	    System.out.println(c);
+	    }**/
+       
 	game.distribute();
 	game._topCard.add(game._deck.remove(0));
 
+	if (game._topCard.get(0).getType() == 10 || game._topCard.get(0).getType() == 11){
+	    game._topCard.get(0).setSuite((int)(Math.random()*4));
+	}
+	
 	int turnCounter = 0;
 
 	while (!game.anyWinner()){
 	    //deck is empty mechanics
 	    
+	    if (turnCounter != 0 && game._topCard.get(0).getType() == 13){ //Skip
+		turnCounter += 1;
+		System.out.println("");
+	    }
+
+	    if (turnCounter != 0 && game._topCard.get(0).getType() == 14){ //Reverse
+		
+	    }
+	    
+	    
 	    game._currentPlayer = game._turnOrder.get(turnCounter%game._turnOrder.size());
 	    
+	    System.out.println();
 	    System.out.println("Please pass the device to " + game._currentPlayer.getName() + ", it is their turn.");
-	    System.out.println("Press any key to continue");
+	    System.out.println("Press any key and RETURN to continue");
 	    Keyboard.readString();
-	
+
+	    if (turnCounter != 0 && game._topCard.get(0).getType() == 11){ //draw 4
+		for (int i = 0; i<4; i++){
+		    game.playerDraw(game._currentPlayer);
+		}
+	    }
+	    if (turnCounter != 0 && game._topCard.get(0).getType() == 12){ //draw 2
+		for (int i = 0; i<2; i++){
+		    game.playerDraw(game._currentPlayer);
+		}
+	    }
+
+	    
 	    game.printUserDisplay(game._currentPlayer);
 
 	    while(!game.anyPlayable(game._currentPlayer)){
@@ -349,7 +434,7 @@ public class Woo{
 	    int cardtoPlay = Keyboard.readInt()-1;
 
 	    while(!game.isPlayable(game._currentPlayer._hand.get(cardtoPlay))){
-		System.out.println("That card is not playable. Make sure your card matches the topCard's suite or type.");
+		System.out.println("That card is not playable. Make sure your card matches the Top Card's suite or type.");
 		System.out.println("Please select another card.");
 		cardtoPlay = Keyboard.readInt()-1;
 	    }
