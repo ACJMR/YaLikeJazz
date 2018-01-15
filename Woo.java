@@ -415,7 +415,7 @@ public class Woo{
 	    
 	    System.out.println();
 	    System.out.println("Please pass the device to " + game._currentPlayer.getName() + ", it is their turn.");
-	    System.out.println("Press any key and RETURN to continue");
+	    System.out.println("Type anything and RETURN to continue");
 	    Keyboard.readString();
 
 	    if (turnCounter != 0 && game._topCard.get(0).getType() == 11){ //draw 4
@@ -457,7 +457,7 @@ public class Woo{
 	    turnCounter += 1;
 	}
 
-	System.out.println(game._currentPlayer.getName() + "is the WINNER!!!!!!");
+	System.out.println(game._currentPlayer.getName() + " is the WINNER!!!!!!");
     }
 	    
 }
