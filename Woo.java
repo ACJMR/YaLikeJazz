@@ -18,7 +18,7 @@ public class Woo{
     public void setup(){         //wrapper class for instantiating Cards, Players, and shuffling deck
 	Card Zero0 = new Zero(0);
 	_deck.add(Zero0);
-	Card Zero1 = new Zero(1);
+	Card Zero1 = new Zero(1); //each card is instantiated, and then added to the _deck
 	_deck.add(Zero1);
 	Card Zero2 = new Zero(2);
 	_deck.add(Zero2);
@@ -280,13 +280,13 @@ public class Woo{
     }
 
     public void playerDraw(Player p){
-	if (_deck.size()==0){            //if
+	if (_deck.size()==0){            //if there are no cards left in the deck, copy the discard pile into the deck and shuffle the deck
 	    for (Card c: _discardPile){
 		_deck.add(c);
 	    }
 	    shuffle();
 	}
-	 p._hand.add(_deck.remove(0));
+	p._hand.add(_deck.remove(0)); //remove card from the deck and add it to p's hand
     }
     
     public boolean anyWinner(){ //checks if each player is a winner, if no player is a winner, return false
