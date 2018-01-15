@@ -191,10 +191,12 @@ public class Woo{
 	Card WildDrawFourD = new WildDrawFour();
 	_deck.add(WildDrawFourD);
 
+	System.out.println("How many players (2-4)?");
+	
     }
 
     public void playerDraw(Player p){
-	
+	p._hand.add(_deck.remove(0));
     }
     
     public boolean anyWinner(){ //checks if each player is a winner, if no player is a winner, return false
@@ -214,7 +216,15 @@ public class Woo{
 	}
     }
 
+    
     public void distribute(){
+	for (int i =0; i < _turnOrder.size(); i++){
+	    Player focusPlayer = _turnOrder.get(i);
+	    while(!focusPlayer.handFull()){
+	        playerDraw(focusPlayer);
+		//focusPlayer.sortHand();	
+	    }
+	}	
     }
     
     public void playCard(Player p, int i){
@@ -228,7 +238,10 @@ public class Woo{
     public static void main(String[]args){
 	Woo game = new Woo();
 	game.setup();
-	System.out.println(game._deck.size());
+
+
+
+	
     }
 	    
 }
