@@ -3,7 +3,12 @@ import java.util.ArrayList;
 public class Player{
     private String _name;
     private int _number;
-    private ArrayList<Card> _hand;
+    public ArrayList<Card> _hand;
+    
+    public Player(String name, int num){
+        _name = name;
+        _number = num;
+    }
     
     public ArrayList<Card> getHand(){
         return _hand;    
@@ -17,10 +22,6 @@ public class Player{
         return _number;
     }
     
-    public void addtoHand(){    
-        
-    }
- 
     
     public boolean isWinner(){
         return _hand.size()==0;
@@ -44,7 +45,15 @@ public class Player{
             return true;
         }
         return false;
+    } 
+    
+    public String toString(){
+        String s = "Your Hand: ";
+        for (Card c: _hand){
+            s += c.toString();
+        }
+        return s;
     }
     
-    }
+}
 

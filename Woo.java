@@ -1,14 +1,18 @@
 import java.util.ArrayList;
+import cs1.Keyboard;
 
 public class Woo{
     private ArrayList<Card> _deck; // Container of cards from which players draw from 
     private ArrayList<Card> _discardPile; // Container of cards already played 
-    private ArrayList<Card>  _topcard; // Container for card 
+    private ArrayList<Card>  _topCard; // Container for card 
     private ArrayList<Player> _turnOrder; // _turnOrder
     private Player _currentPlayer; 
 
     public Woo(){
 	_deck = new ArrayList<Card>();
+	_turnOrder = new ArrayList<Player>();
+	_topCard = new ArrayList<Card>();
+	_discardPile = new ArrayList<Card>();
     }
  
     public void setup(){
@@ -191,7 +195,37 @@ public class Woo{
 	Card WildDrawFourD = new WildDrawFour();
 	_deck.add(WildDrawFourD);
 
-	System.out.println("How many players (2-4)?");
+	shuffle();
+
+	System.out.println("Select number of players (2-4)");
+	int numPlayers = Keyboard.readInt();
+	
+	System.out.println("What is Player1's name?");
+	String pName = Keyboard.readString();	    
+	Player p0 = new Player(pName, 0);
+	_turnOrder.add(p0);
+	
+	System.out.println("What is Player2's name?");
+	pName = Keyboard.readString();	    
+	Player p1 = new Player(pName, 1);
+	_turnOrder.add(p1);
+	
+	if (numPlayers > 2){
+	System.out.println("What is Player3's name?");
+	pName = Keyboard.readString();
+	Player p2 = new Player(pName, 2);
+	_turnOrder.add(p2);
+	}
+	
+	if (numPlayers == 4){
+	System.out.println("What is Player4's name?");
+	pName = Keyboard.readString();	    
+	Player p3 = new Player(pName, 3);
+	_turnOrder.add(p3);
+	}
+
+	
+
 	
     }
 
@@ -228,20 +262,100 @@ public class Woo{
     }
     
     public void playCard(Player p, int i){
-	
+	p._hand.get(i).action();
+	_discardPile.add(_topCard.remove(0));
+	_topCard.add(p._hand.remove(i));
     }
     
-    public static boolean isPlayable(){
+    public boolean isPlayable(Card c){ //
+        if (c.getSuite() == 4){
+	    return true;
+	}
+	else if(c.getSuite() == _topCard.get(0).getSuite()){
+	    return true;
+	}
+	else if(c.getType() == _topCard.get(0).getType()){
+	    return true;
+	}
 	return false;
+    }
+
+    public boolean anyPlayable(Player p){ //tests if the player has any playable card in their hand
+	for (Card c: p._hand){
+	    if (isPlayable(c)){
+		return true;
+	    }
+	}
+	return false;
+    }
+
+
+    public void printUserDisplay(Player p){
+	System.out.println();
+	System.out.println();
+	System.out.println();
+	System.out.println();
+	System.out.println();
+      	System.out.println();
+     	System.out.println();
+     	System.out.println();
+     	System.out.println();
+       	System.out.println();
+      	System.out.println();
+      	System.out.println();
+      	System.out.println();
+      	System.out.println();
+      	System.out.println();
+	System.out.println();
+	System.out.println();
+	System.out.println();
+	System.out.println();
+	System.out.println("TopCard: " + _topCard.get(0) + "  --playable cards must match this card's suite (color) or type");
+	System.out.println();
+	System.out.println(p.getName() + "'s turn:");
+       	System.out.println();
+        System.out.println(p);
     }
     
     public static void main(String[]args){
 	Woo game = new Woo();
 	game.setup();
 
+	game._topCard.add(game._deck.remove(0));
 
+	int turnCounter = 0;
 
-	
+	while (!game.anyWinner()){
+	    //deck is empty mechanics
+	    game._currentPlayer = game._turnOrder.get(turnCounter%game._turnOrder.size());
+	    
+	    game.printUserDisplay(game._currentPlayer);
+
+	    while(!game.anyPlayable(game._currentPlayer)){
+		System.out.println("You have no playable cards, type any key to draw a card");
+		Keyboard.readString();
+		game.playerDraw(game._currentPlayer);
+		//sorthand
+		game.printUserDisplay(game._currentPlayer);
+	    }
+
+	    //user selects card to play
+
+	    System.out.println("Please select a card to play by it's position in your hand.");
+	    System.out.println("To play your leftmost card, type 1, to play the second-leftmost card, type 2...etc");
+	    int cardtoPlay = Keyboard.readInt()-1;
+
+	    while(!game.isPlayable(game._currentPlayer._hand.get(cardtoPlay))){
+		System.out.println("That card is not playable. Make sure your card matches the topCard's suite or type.");
+		System.out.println("Please select another card.");
+		cardtoPlay = Keyboard.readInt()-1;
+	    }
+	    
+	    game.playCard(game._currentPlayer,cardtoPlay); //plays the user-selected card
+	    
+	    turnCounter += 1;
+	}
     }
 	    
 }
+
