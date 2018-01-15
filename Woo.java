@@ -15,7 +15,7 @@ public class Woo{
 	_discardPile = new ArrayList<Card>();
     }
  
-    public void setup(){
+    public void setup(){         //wrapper class for instantiating Cards, Players, and shuffling deck
 	Card Zero0 = new Zero(0);
 	_deck.add(Zero0);
 	Card Zero1 = new Zero(1);
@@ -250,42 +250,42 @@ public class Woo{
 
 	shuffle();
 
-	System.out.println("Select number of players (2-4)");
+	System.out.println("Select number of players (2-4)");   //user inputs how many players the game will have
 	int numPlayers = Keyboard.readInt();
 	
-	System.out.println("What is Player1's name?");
+	System.out.println("What is Player1's name?"); //creates two players no matter what the user input
 	String pName = Keyboard.readString();	    
 	Player p0 = new Player(pName, 0);
-	_turnOrder.add(p0);
+	_turnOrder.add(p0); //adds p0 to _turnOrder
 	
-	System.out.println("What is Player2's name?");
+	System.out.println("What is Player2's name?"); 
 	pName = Keyboard.readString();	    
 	Player p1 = new Player(pName, 1);
-	_turnOrder.add(p1);
+	_turnOrder.add(p1); //adds p1 to _turnOrder
 	
-	if (numPlayers > 2){
-	System.out.println("What is Player3's name?");
-	pName = Keyboard.readString();
-	Player p2 = new Player(pName, 2);
-	_turnOrder.add(p2);
+	if (numPlayers > 2){    
+	    System.out.println("What is Player3's name?");   //if 3 or 4 players, instantiate p2
+	    pName = Keyboard.readString();
+	    Player p2 = new Player(pName, 2);
+	    _turnOrder.add(p2); //adds p2 to _turnOrder
 	}
 	
 	if (numPlayers == 4){
-	System.out.println("What is Player4's name?");
-	pName = Keyboard.readString();	    
-	Player p3 = new Player(pName, 3);
-	_turnOrder.add(p3);
+	    System.out.println("What is Player4's name?");  //if 4 players, instantiate p3
+	    pName = Keyboard.readString();	    
+	    Player p3 = new Player(pName, 3);
+	    _turnOrder.add(p3); //adds p3 to _turnOrder
 	}
 
     }
 
     public void playerDraw(Player p){
-	 if (_deck.size()==0){
-	     for (Card c: _discardPile){
-		 _deck.add(c);
-	     }
-	     shuffle();
-	 }
+	if (_deck.size()==0){            //if
+	    for (Card c: _discardPile){
+		_deck.add(c);
+	    }
+	    shuffle();
+	}
 	 p._hand.add(_deck.remove(0));
     }
     
@@ -375,13 +375,13 @@ public class Woo{
     
     public static void main(String[]args){
 	Woo game = new Woo();
-	game.setup();
+	game.setup(); //instantiates deck, prompts user to select players, and instantiates players
 
-	/**for (Card c: game._deck){
+	/**for (Card c: game._deck){ //prints out deck
 	    System.out.println(c);
 	    }**/
        
-	game.distribute();
+	game.distribute();  //
 	game._topCard.add(game._deck.remove(0));
 
 	if (game._topCard.get(0).getType() == 10 || game._topCard.get(0).getType() == 11){
@@ -433,7 +433,7 @@ public class Woo{
 	    game.printUserDisplay(game._currentPlayer);
 
 	    while(!game.anyPlayable(game._currentPlayer)){
-		System.out.println("You have no playable cards, type any key to draw a card");
+		System.out.println("You have no playable cards, type any key and RETURN to draw a card");
 		Keyboard.readString();
 		game.playerDraw(game._currentPlayer);
 		//sorthand
