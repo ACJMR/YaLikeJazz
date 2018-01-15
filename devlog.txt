@@ -122,6 +122,6 @@ Xinyi ::
 2018-01-15
 -------------------------------------------------------------
 Colin :: Worked on coding out JUNO, revised flow charts.
-George :: Worked on coding out JUNO through screenshare, revised README and revised UML.
+George :: Worked on coding out JUNO through screenshare with Colin, revised README and revised UML.
 Xinyi :: 
 ==============================================================
