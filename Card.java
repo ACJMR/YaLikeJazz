@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+
 public abstract class Card{
-    private int _type; 
-    private int _suite;
+    protected int _type; 
+    protected int _suite;
     
     
     public int getType(){
@@ -12,11 +14,13 @@ public abstract class Card{
     }
 
     public boolean isPlayable(){ //determines whther the card is playable according to the _topCard
-        
+        return true;
     }
     
-    public void action(){ //We
-        
+    public abstract void action();
+    
+    public String toString(){
+        return "";
     }
     
 }
