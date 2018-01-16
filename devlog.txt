@@ -128,5 +128,5 @@ Xinyi :: Worked on coding out JUNO
 -------------------------------------------------------------
 Colin :: Fixed issues regarding player's hand not sorting when cards were drawn, commented code, revised devlog
 George ::
-Xinyi :: Worked on Juno, worked on devlog
+Xinyi :: Worked on issues regarding player's input is not an int, worked on devlog, revised UML
 ==============================================================

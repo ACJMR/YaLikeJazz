@@ -8,7 +8,7 @@ public class Woo{
     private ArrayList<Player> _turnOrder; //Container of all Players that determines the turn order
     private Player _currentPlayer; //Keeps track of the player who's turn it is
     private int numPlayers; //Number of players
-    private static int cardtoPlay; //
+    private static int cardtoPlay; //the index of the card that _currentPlayer will play
  
     public Woo(){ //Constructor instantiates many instance variables as empty ArrayLists
 	_deck = new ArrayList<Card>();
@@ -17,13 +17,13 @@ public class Woo{
 	_discardPile = new ArrayList<Card>();
     }
 
-    public static boolean isInt(String s){
+    public static boolean isInt(String s){//checks if a String can be converted into int. Helper function for checking the input from the terminal is an int.
      	try {
-    	    Integer.parseInt(s);
-     	    return true;
+    	    Integer.parseInt(s); //convert the String into an int
+     	    return true; //true if the String can be converted
     	}
    	catch(Exception e){
-	    return false;
+	    return false; //false if the String can not be converted
 	}
     }
 
@@ -268,12 +268,12 @@ public class Woo{
 	while (is){
 	    System.out.println("Select number of players (2-4)");   //user inputs how many players the game will have
 	    String input = Keyboard.readString();
-	    if (isInt(input)){
-	        numPlayers = Integer.parseInt(input); //tests to see if the user's input is a proper Int
-		is = false;
+	    if (isInt(input)){//tests to see if the user's input is a proper int
+	        numPlayers = Integer.parseInt(input); 
+		is = false; // end the while loop if the input is a proper int
 	    }
 	    else{
-        System.out.println();
+		System.out.println();
 		System.out.println("Please enter an integer."); //otherwise, prompt them to select an int
 	    }
 	    
@@ -475,32 +475,33 @@ public class Woo{
 	   
         //User selects a card to play:
 	    is = true;
-	    while (is){
+	    while (is){ //if input is not a proper int, the while loop keeps going
 		System.out.println("Please select a card to play by it's position in your hand.");
 		System.out.println("Card position in your hand is indicated by a number in parenthesis.");
 		String input = Keyboard.readString();
-		if (isInt(input)){
+		if (isInt(input)){ //tests to see if the user's input is a proper int
 		    cardtoPlay = Integer.parseInt(input) - 1;
-		    is = false;
+		    is = false; //end the while loop if the input is a proper int
 		}
 		else{
-		    System.out.println("Please enter an integer.");
+		    System.out.println("Please enter an integer."); //otherwise, prompt them to select an int
 		}
 	    }
 	    
 
 	    while(!game.isPlayable(game._currentPlayer._hand.get(cardtoPlay))){
+		
 	        is = true;
-		while (is){
+		while (is){//if input is not a proper int, the while loop keeps going
 		    System.out.println("That card is not playable. Make sure your card matches the Top Card's suite or type.");
 		    System.out.println("Please select another card.");
 		    String input = Keyboard.readString();
-		    if (isInt(input)){
+		    if (isInt(input)){//tests to see if the user's input is a proper int
 			cardtoPlay = Keyboard.readInt()-1;
-			is = false; 
+			is = false; //end the while loop if the input is a proper int
 			}
 		    else{
-			System.out.println("Please enter an integer.");
+			System.out.println("Please enter an integer.");//otherwise, prompt them to select an int
 		    }	    
 		}
 	    }
