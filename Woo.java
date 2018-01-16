@@ -6,7 +6,9 @@ public class Woo{
     private ArrayList<Card> _discardPile; // Container of cards already played 
     private ArrayList<Card>  _topCard; // Container for card 
     private ArrayList<Player> _turnOrder; // _turnOrder
-    private Player _currentPlayer; 
+    private Player _currentPlayer;
+    private int numPlayers;
+    private static int cardtoPlay;
 
     public Woo(){
 	_deck = new ArrayList<Card>();
@@ -14,7 +16,18 @@ public class Woo{
 	_topCard = new ArrayList<Card>();
 	_discardPile = new ArrayList<Card>();
     }
- 
+
+    public static boolean isInt(String s){
+     	try {
+    	    Integer.parseInt(s);
+     	    return true;
+    	}
+   	catch(Exception e){
+	    return false;
+	}
+    }
+
+    
     public void setup(){         //wrapper class for instantiating Cards, Players, and shuffling deck
 	Card Zero0 = new Zero(0);
 	_deck.add(Zero0);
@@ -250,9 +263,21 @@ public class Woo{
 
 	shuffle();
 
-	System.out.println("Select number of players (2-4)");   //user inputs how many players the game will have
-	int numPlayers = Keyboard.readInt();
-	
+
+	boolean is = true;
+	while (is){
+	    System.out.println("Select number of players (2-4)");   //user inputs how many players the game will have
+	    String input = Keyboard.readString();
+	    if (isInt(input)){
+	        numPlayers = Integer.parseInt(input);
+		is = false;
+	    }
+	    else{
+		System.out.println("Please enter an integer.");
+	    }
+	    
+	}
+	    
 	System.out.println("What is Player1's name?"); //creates two players no matter what the user input
 	String pName = Keyboard.readString();	    
 	Player p0 = new Player(pName, 0);
@@ -390,7 +415,8 @@ public class Woo{
 	}
 	
 	int turnCounter = 0;
- 
+	boolean is;
+	
 	while (!game.anyWinner()){
 	
 	    
@@ -443,14 +469,37 @@ public class Woo{
 
 	    //user selects card to play
 
-	    System.out.println("Please select a card to play by it's position in your hand.");
-	    System.out.println("Card position in your hand is indicated by a number in parenthesis.");
-	    int cardtoPlay = Keyboard.readInt()-1;
+
+	    is = true;
+	    while (is){
+		System.out.println("Please select a card to play by it's position in your hand.");
+		System.out.println("Card position in your hand is indicated by a number in parenthesis.");
+		String input = Keyboard.readString();
+		if (isInt(input)){
+		    cardtoPlay = Integer.parseInt(input) - 1;
+		    is = false;
+		}
+		else{
+		    System.out.println("Please enter an integer.");
+		}
+	    }
+	    
+	    
 
 	    while(!game.isPlayable(game._currentPlayer._hand.get(cardtoPlay))){
-		System.out.println("That card is not playable. Make sure your card matches the Top Card's suite or type.");
-		System.out.println("Please select another card.");
-		cardtoPlay = Keyboard.readInt()-1;
+	        is = true;
+		while (is){
+		    System.out.println("That card is not playable. Make sure your card matches the Top Card's suite or type.");
+		    System.out.println("Please select another card.");
+		    String input = Keyboard.readString();
+		    if (isInt(input)){
+			cardtoPlay = Keyboard.readInt()-1;
+			is = false; 
+			}
+		    else{
+			System.out.println("Please enter an integer.");
+		    }	    
+		}
 	    }
 	    
 	    game.playCard(game._currentPlayer,cardtoPlay); //plays the user-selected card

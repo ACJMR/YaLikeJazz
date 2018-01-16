@@ -7,52 +7,49 @@ pd 08
 JUNO
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete these instructions once all teammates understand usage.
-  (from tilde bar above to tilde bar below)
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Wow, we so BOSS bc...>
+- We figured out how to treat special cards the same way we treat number cards by giving all the cards a instance variable called _type. For number cards, its _type is just its value. For special cards, we assigned specific number for its _type.
+- We figured out how to deal with the actions of special cards.
+- We figured out how to limit the input to integer. We did so by first creating a helper function that returns boolean value of whether the input is an int using a try-and-catch block. Then we used a while loop until the user's input is an int.
+
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
->
+- An AI feature could be added that allows player(s) to play against computer.
+- There could be a stronger sorting method that sorts cards according to their suite, then by their value.
+
+
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
+- We learned how to change the color of the text in the terminal.
+
+
+
+
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We changed ___ to ___ bc...
-<etc>
-<etc>
+
+
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<tales of wisdom gained...>
+- Planning before coding.
+- Adding small changes may take a lot more time than you think, so it is important to plan your time ahead.
+- Use helper functions that make your code clean.
+
+
+
+
+
+
+
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -87,7 +84,7 @@ Xinyi :: Helped edit the README file.
 --------------------------------------------------------------
 Colin :: Helped edit the UML diagram, todo list, and drafted up a Flow Chart
 George :: Helped edit the UML diagram and write up the todo list. 
-Xinyi :: 
+Xinyi ::  Helped edit the UML diagram
 ==============================================================
 
 2018-01-10
@@ -123,5 +120,12 @@ Xinyi ::
 -------------------------------------------------------------
 Colin :: Worked on coding out JUNO, revised flow charts.
 George :: Worked on coding out JUNO through screenshare with Colin, revised README and revised UML.
-Xinyi :: 
+Xinyi :: Worked on coding out JUNO
+==============================================================
+
+2018-01-16
+-------------------------------------------------------------
+Colin :: 
+George ::
+Xinyi :: Worked on Juno, worked on devlog
 ==============================================================
