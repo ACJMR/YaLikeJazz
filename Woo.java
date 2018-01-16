@@ -381,9 +381,10 @@ public class Woo{
 	    System.out.println(c);
 	    }**/
        
-	game.distribute();  //
-	game._topCard.add(game._deck.remove(0));
+	game.distribute();  //Distribute cards to all Players 
+	game._topCard.add(game._deck.remove(0));//Populate _topCard with the first card from the deck 
 
+	//If the topCard is 
 	if (game._topCard.get(0).getType() == 10 || game._topCard.get(0).getType() == 11){
 	    game._topCard.get(0).setSuite((int)(Math.random()*4));
 	}
