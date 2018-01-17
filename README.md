@@ -33,12 +33,12 @@ The game will begin, please pass the device between players for their respective
 	* Wild Card Draw Four - player selects a suite to change to and the next player draws four cards 
 2. Setup
 	* 2-4 players (user selected) are dealt 7 cards each from a shuffled deck
-	* One card is revealed to begin the “center pile”, the remaining cards are placed in another “draw pile” where players draw their cards from
+	* One card is revealed to become the "Top Card", the remaining cards are placed into a deck where players draw their cards from.
 3. Gameplay 
-	* Each player takes turns playing one of their cards into the “center pile”
-	* In order to be placed in the center, a card must be either...
-	* - The same suite (color) as the center card
-	* - The same card-type as the center card
+	* Each player takes turns playing one of their cards against the "Top Card"
+	* In order to be placed in the top, a card must be either...
+	* - The same suite (color) as the Top card
+	* - The same card-type as the Top card
 	* - Any type of wildcard
-	* If a player has no playable cards, they must draw cards from the “draw pile” until they have a playable one
+	* If a player has no playable cards, they must draw cards from the deck until they have a playable one
 	* A player wins when they have zero cards
