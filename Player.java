@@ -1,30 +1,30 @@
 import java.util.ArrayList;
 
 public class Player{
-    private String _name;
-    private int _number;
-    public ArrayList<Card> _hand;
+    private String _name; //player's name
+    private int _number;  //player's number
+    public ArrayList<Card> _hand; //players hand of Cards
     
-    public Player(String name, int num){
+    public Player(String name, int num){ //constructor instantiates the instance vars
         _name = name;
         _number = num;
         _hand = new ArrayList<Card>();
     }
     
-    public ArrayList<Card> getHand(){
+    public ArrayList<Card> getHand(){ //accessor for _hand
         return _hand;    
     }
     
-    public String getName(){
+    public String getName(){//accessor for _name 
         return _name;
     }
     
-    public int getNumber(){ 
+    public int getNumber(){ //accessor for _number
         return _number;
     }
     
     
-    public boolean isWinner(){
+    public boolean isWinner(){ //returns true if player has 0 cards in hand
         return _hand.size()==0;
     }
     
@@ -82,23 +82,14 @@ public class Player{
      }
 
     
-    public int playCard(){
-        return 0;
-    }
-    
-    public boolean anyPlayableCard(){
-        return true;
-        
-    }
-    
-    public boolean handFull(){
+    public boolean handFull(){ //returns true once player's hand exceedes 7
         if (_hand.size() >= 7){
             return true;
         }
         return false;
     } 
     
-    public String toString(){
+    public String toString(){   //displays the user's cards with their position in hand 
         String s = "Your Hand: ";
         for (int i = 0; i < _hand.size(); i++){
             Card c = _hand.get(i);

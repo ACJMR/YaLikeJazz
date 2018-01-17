@@ -4,13 +4,13 @@ import cs1.Keyboard;
 public class Woo{
     private ArrayList<Card> _deck; // Container of cards from which players draw from 
     private ArrayList<Card> _discardPile; // Container of cards already played 
-    private ArrayList<Card>  _topCard; // Container for card 
-    private ArrayList<Player> _turnOrder; // _turnOrder
-    private Player _currentPlayer;
-    private int numPlayers;
-    private static int cardtoPlay;
-
-    public Woo(){
+    private ArrayList<Card>  _topCard; // Container for the top card that determines playable cards
+    private ArrayList<Player> _turnOrder; //Container of all Players that determines the turn order
+    private Player _currentPlayer; //Keeps track of the player who's turn it is
+    private int numPlayers; //Number of players
+    private static int cardtoPlay; //
+ 
+    public Woo(){ //Constructor instantiates many instance variables as empty ArrayLists
 	_deck = new ArrayList<Card>();
 	_turnOrder = new ArrayList<Player>();
 	_topCard = new ArrayList<Card>();
@@ -269,16 +269,17 @@ public class Woo{
 	    System.out.println("Select number of players (2-4)");   //user inputs how many players the game will have
 	    String input = Keyboard.readString();
 	    if (isInt(input)){
-	        numPlayers = Integer.parseInt(input);
+	        numPlayers = Integer.parseInt(input); //tests to see if the user's input is a proper Int
 		is = false;
 	    }
 	    else{
-		System.out.println("Please enter an integer.");
+        System.out.println();
+		System.out.println("Please enter an integer."); //otherwise, prompt them to select an int
 	    }
 	    
 	}
 	    
-	System.out.println("What is Player1's name?"); //creates two players no matter what the user input
+	System.out.println("What is Player1's name?"); //creates two players no matter what int the user input
 	String pName = Keyboard.readString();	    
 	Player p0 = new Player(pName, 0);
 	_turnOrder.add(p0); //adds p0 to _turnOrder
@@ -323,7 +324,7 @@ public class Woo{
 	return false;
     }
     
-    public void shuffle(){
+    public void shuffle(){     //loops through deck and swaps the current Card with one at a random index
 	int max = _deck.size();
 	for (int i = 0; i < _deck.size(); i++){
 	    int random = (int) (Math.random() * max);
@@ -332,30 +333,30 @@ public class Woo{
     }
 
     
-    public void distribute(){
-	for (int i =0; i < _turnOrder.size(); i++){
+    public void distribute(){  //deals out 7 cards to each player
+	for (int i =0; i < _turnOrder.size(); i++){ //loops through all players in _turnOrder
 	    Player focusPlayer = _turnOrder.get(i);
-	    while(!focusPlayer.handFull()){
+	    while(!focusPlayer.handFull()){  //each player draws until their hand is full, the sorts their hand
 	        playerDraw(focusPlayer);	
 	    }
 	    focusPlayer.sortHand();
 	}	
     }
     
-    public void playCard(Player p, int i){
-	p._hand.get(i).action();
-	_discardPile.add(_topCard.remove(0));
+    public void playCard(Player p, int i){ //Plays card at pos i in Player p's hand
+	p._hand.get(i).action(); //execute card's action (applicable to Wild-Cards only)
+	_discardPile.add(_topCard.remove(0));  //move card in _topCard to _discardPile, then move the player's card into _topCard
 	_topCard.add(p._hand.remove(i));
     }
     
-    public boolean isPlayable(Card c){ //
-        if (c.getSuite() == 4){
+    public boolean isPlayable(Card c){ //returns true if card is playable according to the rules of JUNO
+        if (c.getSuite() == 4){ //if card is a Wild-Card, return true
 	    return true;
 	}
-	else if(c.getSuite() == _topCard.get(0).getSuite()){
+	else if(c.getSuite() == _topCard.get(0).getSuite()){ //checks if card has same suite as _topCard
 	    return true;
 	}
-	else if(c.getType() == _topCard.get(0).getType()){
+	else if(c.getType() == _topCard.get(0).getType()){ //checks if card has same type as _topCard
 	    return true;
 	}
 	return false;
@@ -396,41 +397,45 @@ public class Woo{
 	System.out.println();
        	System.out.println();
         System.out.println(p);
+        System.out.println();
     }
     
+    
+    //==========================================
+    
     public static void main(String[]args){
+    
 	Woo game = new Woo();
-	game.setup(); //instantiates deck, prompts user to select players, and instantiates players
+	game.setup(); //instantiates deck, prompts user to select players, instantiates players, and shuffles deck
 
-	/**for (Card c: game._deck){ //prints out deck
+	/**for (Card c: game._deck){ //prints out deck for testing purposes
 	    System.out.println(c);
 	    }**/
        
 	game.distribute();  //Distribute cards to all Players 
-	game._topCard.add(game._deck.remove(0));//Populate _topCard with the first card from the deck 
+	game._topCard.add(game._deck.remove(0));  //Populate _topCard with the first card from the deck 
 
-	//If the topCard is 
-	if (game._topCard.get(0).getType() == 10 || game._topCard.get(0).getType() == 11){
+	
+	if (game._topCard.get(0).getType() == 10 || game._topCard.get(0).getType() == 11){ //if _topCard is a Wild-Card, then randomly determine it's suite
 	    game._topCard.get(0).setSuite((int)(Math.random()*4));
 	}
 	
-	int turnCounter = 0;
+	int turnCounter = 0; //counts number of turns
 	boolean is;
 	
-	while (!game.anyWinner()){
+	while (!game.anyWinner()){  //makes the game continue while there are no winners
 	
 	    
-	    if (turnCounter != 0 && game._topCard.get(0).getType() == 13){ //Skip
+	    if (turnCounter != 0 && game._topCard.get(0).getType() == 13){ //if _topCard (played last turn) is a Skip card, and it is not turn 0, turnCounter incriments, effectively skipping the next player's turn
 		turnCounter += 1;
-		System.out.println("");
 	    }
 
-	    if (turnCounter != 0 && game._topCard.get(0).getType() == 14){ //Reverse
-		Player playerBefore = game._turnOrder.get(((turnCounter%game._turnOrder.size()) + game._turnOrder.size() - 1)%game._turnOrder.size());
+	    if (turnCounter != 0 && game._topCard.get(0).getType() == 14){ //if _topCard (played last turn) is a Reverse card, and it is not turn 0...
+		Player playerBefore = game._turnOrder.get(((turnCounter%game._turnOrder.size()) + game._turnOrder.size() - 1)%game._turnOrder.size());  //stores the player who's turn just ended in playerBefore
 		for(int i = 0; i < game._turnOrder.size() / 2; i++){
-		    game._turnOrder.set(i,game._turnOrder.set(game._turnOrder.size()-1-i,game._turnOrder.get(i)));	
+		    game._turnOrder.set(i,game._turnOrder.set(game._turnOrder.size()-1-i,game._turnOrder.get(i)));	//loops through the array and swaps items equal distances from the ends, reversing the array's contents
 		}
-	        for (int i = 0; i < game._turnOrder.size(); i++){
+	        for (int i = 0; i < game._turnOrder.size(); i++){ //changes turnCounter to be the playerBefore's turn
 		    if (game._turnOrder.get(i) == playerBefore){
 			turnCounter = i+1;
 		    }
@@ -438,38 +443,37 @@ public class Woo{
 	    }
 	    
 	    
-	    game._currentPlayer = game._turnOrder.get(turnCounter%game._turnOrder.size());
+	    game._currentPlayer = game._turnOrder.get(turnCounter%game._turnOrder.size()); //current player is set according to how many turns there have been and how many players there are (turnCounter % numPlayers)
 	    
 	    System.out.println();
-	    System.out.println("Please pass the device to " + game._currentPlayer.getName() + ", it is their turn.");
+	    System.out.println("Please pass the device to " + game._currentPlayer.getName() + ", it is their turn."); //prints out a message to get the user to give device to next user
 	    System.out.println("Type anything and RETURN to continue");
 	    Keyboard.readString();
 
-	    if (turnCounter != 0 && game._topCard.get(0).getType() == 11){ //draw 4
+	    if (turnCounter != 0 && game._topCard.get(0).getType() == 11){ //if _topCard (played last turn) is a WildDrawFour card, and it is not turn 0, _currentPlayer draws 4 times
 		for (int i = 0; i<4; i++){
 		    game.playerDraw(game._currentPlayer);
 		}
 	    }
-	    if (turnCounter != 0 && game._topCard.get(0).getType() == 12){ //draw 2
+	    if (turnCounter != 0 && game._topCard.get(0).getType() == 12){ //if _topCard (played last turn) is a DrawTwo card, and it is not turn 0, _currentPlayer draws 2 times
 		for (int i = 0; i<2; i++){
 		    game.playerDraw(game._currentPlayer);
 		}
 	    }
 
 	    
-	    game.printUserDisplay(game._currentPlayer);
+	    game.printUserDisplay(game._currentPlayer); //prints out UserDisplay (user's hand and instructions to play a card)
 
-	    while(!game.anyPlayable(game._currentPlayer)){
+	    while(!game.anyPlayable(game._currentPlayer)){ //while the user has no playable cards in their hand....
 		System.out.println("You have no playable cards, type any key and RETURN to draw a card");
 		Keyboard.readString();
-		game.playerDraw(game._currentPlayer);
-		//sorthand
+		game.playerDraw(game._currentPlayer); //force the user to draw a card
+		game._currentPlayer.sortHand(); //player's hand is sorted, then displayed
 		game.printUserDisplay(game._currentPlayer);
 	    }
 
-	    //user selects card to play
-
-
+	   
+        //User selects a card to play:
 	    is = true;
 	    while (is){
 		System.out.println("Please select a card to play by it's position in your hand.");
@@ -483,7 +487,6 @@ public class Woo{
 		    System.out.println("Please enter an integer.");
 		}
 	    }
-	    
 	    
 
 	    while(!game.isPlayable(game._currentPlayer._hand.get(cardtoPlay))){
@@ -504,10 +507,10 @@ public class Woo{
 	    
 	    game.playCard(game._currentPlayer,cardtoPlay); //plays the user-selected card
 	    
-	    turnCounter += 1;
+	    turnCounter += 1; //turn counter Incriments
 	}
 
-	System.out.println(game._currentPlayer.getName() + " is the WINNER!!!!!!");
+	System.out.println(game._currentPlayer.getName() + " is the WINNER!!!!!!"); //once the while loops terminates because their is a winner, display a winner's message
     }
 	    
 }

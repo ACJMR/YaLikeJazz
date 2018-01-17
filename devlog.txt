@@ -18,32 +18,33 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- An AI feature could be added that allows player(s) to play against computer.
-- There could be a stronger sorting method that sorts cards according to their suite, then by their value.
-
-
+- There could be a stronger sorting method that sorts cards according to their suite, then by their value. However it is still effective, as the human brain finds pleasure in colored patterns and it is easier to locate cards.
+- One issue is that players can simply scroll up to see each other's hands in the terminal. We tried to eliminate this problem by printing out empty lines between turns. 
 
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - We learned how to change the color of the text in the terminal.
-
-
+- We also learned the power and usefulness of using protected variables rather than public ones to give accessibility to instance vars to subclasses.
+- We also learned that if a method is abstract, the class must be abstract, but abstract classes need NOT contain only abstract methods. Superclasses can contain regular methods that are the same for each subclass, but if you want to force each subclass to have a particular method (such as action()), you must have an abstract method in the superclass.
 
 
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+-Initially, we had Player have methods such as drawCard() in which a card was removed from the deck and added to their hand. However, we soon realized that this would not work because the Player class has no idea what the deck is. Our main driver, Woo, instantiates and controls the deck, so we moved the drawing method to Woo.
+-Similarly, we initially had the sortHand() method in Woo. However, it makes more sense for the method belong to class Player because the Player has access to it's own _hand and can modify it. 
 
 
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Planning before coding.
+- Planning before coding. This may sound like we are simply regurgitating what has been said all term, but we really mean it. Roughly half our time was devoted to planning, organizing, drafting up UMLs and flowcharts, creating a todo list and workflow priorities. This was extremely helpful in accomplishing our (at first) daunting task of coding a complex game.
 - Adding small changes may take a lot more time than you think, so it is important to plan your time ahead.
 - Use helper functions that make your code clean.
-
+- Use the errors as guides. One particular example was when we kept getting a NullPointer Exception in the terminal, and traced it back to simply not instantiating the instance variable _hand in the constructor. Huge time-saver.
+- We learned the valuble lesson of optimizing workflow. When we encountered mid-development design changes, it was better to go back to the KTS and work on revising the flowcharts and UML rather than the code itself. 
+- Sticking to the todo list was also helpful. We did not attempt to tackle the whole problem at once. We began by simply creating a game with simple number cards, then added the wild cards, then the skip...etc, until we had a full working game. Similarly, we did not immediately jump to writing a game for 4 players. We began with deck mechanics (a one-player game), then worked our way up.
 
 
 
@@ -118,14 +119,14 @@ Xinyi ::
 
 2018-01-15
 -------------------------------------------------------------
-Colin :: Worked on coding out JUNO, revised flow charts.
+Colin :: Worked on coding out JUNO with George (Xinyi joined us later), revised flow charts.
 George :: Worked on coding out JUNO through screenshare with Colin, revised README and revised UML.
 Xinyi :: Worked on coding out JUNO
 ==============================================================
 
 2018-01-16
 -------------------------------------------------------------
-Colin :: 
+Colin :: Fixed issues regarding player's hand not sorting when cards were drawn, commented code, revised devlog
 George ::
 Xinyi :: Worked on Juno, worked on devlog
 ==============================================================
