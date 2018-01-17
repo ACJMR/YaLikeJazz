@@ -28,14 +28,16 @@ public class Player{
         return _hand.size()==0;
     }
     
-     public void sortHand(){
+    public void sortHand(){ //sorts cards into player's hand by green, blue, red, yellow, black color
 	int handOriginalSize = _hand.size();
 	int removedCards = 0; 
+	//create holders for cards of different colors 
 	ArrayList<Card> greenHand = new ArrayList<Card>();
 	ArrayList<Card> blueHand = new ArrayList<Card>();
 	ArrayList<Card> redHand = new ArrayList<Card>();
 	ArrayList<Card> yellowHand = new ArrayList<Card>();
 	ArrayList<Card> blackHand = new ArrayList<Card>();
+	//remove all cards from hand and sort them into colored card piles
 	while(removedCards != handOriginalSize){
 	    if (_hand.get(0).getSuite() == 0){
 		redHand.add(_hand.remove(0));
@@ -59,7 +61,7 @@ public class Player{
 	int redHandOriginalSize = redHand.size();
 	int yellowHandOriginalSize = yellowHand.size(); 
 	int blackHandOriginalSize = blackHand.size();
-
+	//add each card pile back to the player's hand in order
 	for (int i = 0; i < greenHandOriginalSize; i++){
 	    _hand.add(greenHand.remove(0));
 	}
@@ -89,7 +91,7 @@ public class Player{
         return false;
     } 
     
-    public String toString(){   //displays the user's cards with their position in hand 
+    public String toString(){   //displays the player's cards with their position in hand 
         String s = "Your Hand: ";
         for (int i = 0; i < _hand.size(); i++){
             Card c = _hand.get(i);

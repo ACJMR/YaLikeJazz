@@ -17,7 +17,7 @@ public class Woo{
 	_discardPile = new ArrayList<Card>();
     }
 
-    public static boolean isInt(String s){//checks if a String can be converted into int. Helper function for checking the input from the terminal is an int.
+    public static boolean isInt(String s){//checks if a String can be converted into int. Helper function checks if the input from the terminal is an int.
      	try {
     	    Integer.parseInt(s); //convert the String into an int
      	    return true; //true if the String can be converted
