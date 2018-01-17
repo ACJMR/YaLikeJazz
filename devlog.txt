@@ -127,6 +127,6 @@ Xinyi :: Worked on coding out JUNO
 2018-01-16
 -------------------------------------------------------------
 Colin :: Fixed issues regarding player's hand not sorting when cards were drawn, commented code, revised devlog
-George :: Commented code, revised UML diagram
+George :: Commented code, edited README, revised UML diagram
 Xinyi :: Worked on issues regarding player's input is not an int, worked on devlog, revised UML
 ==============================================================
